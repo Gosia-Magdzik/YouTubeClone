@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png";
-import {  Bell, Menu, Upload, User } from 'lucide-react';
+import {  Bell, Menu, Upload, User, Mic, Search } from 'lucide-react';
 import { Button } from "../components/Button";
 
 export const PageHeader = () => {
@@ -18,8 +18,28 @@ export const PageHeader = () => {
           <p>YouTube</p>
         </a>
       </div>
-      <div></div>
-      <div className="flex flex-shrink md:gap-2">
+      <form className="flex gap-4 flex-grow justify-center">
+        <div className="flex flex-grow max-w-[600px]">
+          <input
+            type="search"
+            placeholder="Search"
+            className="rounded-l-full border border-secondary-border shadow-inner shadow-secondary py-1 px-4 text-lg w-full focus:border-blue-500 outline-none"
+          />
+          <Button
+            className="py-2 px-4 rounded-r-full border-secondary-border border border-l-0 flex-shrink-0"
+          >
+            <Search/>
+          </Button>
+        </div>
+        <Button
+          type="button"
+          size="icon"
+          className="flex-shrink-0"
+        >
+          <Mic/>
+        </Button>
+      </form>
+      <div className="flex flex-shrink-0 md:gap-2">
         <Button 
           size="icon" 
           variant="ghost"

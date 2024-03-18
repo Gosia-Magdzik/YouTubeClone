@@ -9,7 +9,7 @@ const ButtonStyles = cva(["transition-colors"], {
       ghost: ["hover:bg-gray-100"]
     },
     size: {
-      default: ["rounded", "p-2"],
+      default: [ " rounded", "p-2"],
       icon: [
         "rounded-full",
         "w-10",
@@ -35,7 +35,7 @@ export const Button = ({ variant, size, className, ...props }: ButtonProps) => {
   return (
     <button 
       {...props} 
-      className={twMerge(className, ButtonStyles({ variant, size }))} 
+      className={twMerge(ButtonStyles({ variant, size }), className)} 
     />
   )
 }
