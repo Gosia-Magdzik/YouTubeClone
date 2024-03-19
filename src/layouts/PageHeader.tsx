@@ -13,12 +13,12 @@ export const PageHeader = () => {
         >
           <Menu/>
         </Button>
-        <a href="/" className="flex flex-row h-6">
+        <a href="/" className="flex flex-row items-center h-11 w-11 mr-10">
           <img src={logo} />
-          <p>YouTube</p>
+          <p className="text-xl mx-2">YouTube</p>
         </a>
       </div>
-      <form className="flex gap-4 flex-grow justify-center">
+      <form className="md:flex hidden gap-4 flex-grow justify-center items-center mx-3">
         <div className="flex flex-grow max-w-[600px]">
           <input
             type="search"
@@ -39,7 +39,7 @@ export const PageHeader = () => {
           <Mic/>
         </Button>
       </form>
-      <div className="flex flex-shrink-0 md:gap-2">
+      <div className="flex flex-shrink-0 md:gap-2 items-center">
         <Button 
           size="icon" 
           variant="ghost"
