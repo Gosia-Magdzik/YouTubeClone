@@ -43,6 +43,20 @@ export const PageHeader = () => {
         <Button 
           size="icon" 
           variant="ghost"
+          className="md:hidden"
+        >
+          <Search/>
+        </Button>
+        <Button 
+          size="icon" 
+          variant="ghost"
+          className="md:hidden"
+        >
+          <Mic/>
+        </Button>
+        <Button 
+          size="icon" 
+          variant="ghost"
         >
           <Upload/>
         </Button>

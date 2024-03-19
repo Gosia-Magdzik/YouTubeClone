@@ -12,8 +12,8 @@ const ButtonStyles = cva(["transition-colors"], {
       default: [ " rounded", "p-2"],
       icon: [
         "rounded-full",
-        "w-10",
-        "h-10",
+        "w-12",
+        "h-12",
         "flex", 
         "items-center",
         "justify-center",
