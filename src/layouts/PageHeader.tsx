@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png";
-import {  Bell, Menu, Upload, User, Mic, Search } from 'lucide-react';
+import {  Bell, Menu, Upload, User, Mic, Search, ArrowLeft } from 'lucide-react';
 import { Button } from "../components/Button";
 import { useState } from "react";
 
@@ -23,7 +23,18 @@ export const PageHeader = () => {
         </a>
       </div>
       <form 
-        className={`gap-4 flex-grow justify-center items-center mx-3 ${showFullWidthSearch ? "flex" : "hidden md:flex"}`}>
+        className={`gap-4 flex-grow justify-center items-center mx-3 ${showFullWidthSearch ? "flex" : "hidden md:flex"}`}
+      >
+        {showFullWidthSearch && (
+          <Button 
+            onClick={() => setShowFullWidthSearch(false)}
+            size="icon" 
+            variant="ghost"
+            className="flex-shrink-0"
+          >
+            <ArrowLeft/>
+          </Button>
+        )}
         <div className="flex flex-grow max-w-[600px]">
           <input
             type="search"
