@@ -1,11 +1,15 @@
 import logo from "../assets/logo.png";
 import {  Bell, Menu, Upload, User, Mic, Search } from 'lucide-react';
 import { Button } from "../components/Button";
+import { useState } from "react";
 
 export const PageHeader = () => {
+  const [showFullWidthSearch, setShowFullWidthSearch] = useState(false)
+
   return (
     <div className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4">
-      <div className="flex gap-4 items-center flex-shrink-0">
+      <div 
+        className={`gap-4 items-center flex-shrink-0 ${showFullWidthSearch ? "hidden" : "flex"}`}>
         <Button 
           variant="ghost"
           size="icon"
@@ -18,7 +22,8 @@ export const PageHeader = () => {
           <p className="text-xl mx-2">YouTube</p>
         </a>
       </div>
-      <form className="md:flex hidden gap-4 flex-grow justify-center items-center mx-3">
+      <form 
+        className={`gap-4 flex-grow justify-center items-center mx-3 ${showFullWidthSearch ? "flex" : "hidden md:flex"}`}>
         <div className="flex flex-grow max-w-[600px]">
           <input
             type="search"
@@ -39,8 +44,10 @@ export const PageHeader = () => {
           <Mic/>
         </Button>
       </form>
-      <div className="flex flex-shrink-0 md:gap-2 items-center">
+      <div 
+        className={`flex-shrink-0 md:gap-2 items-center ${showFullWidthSearch ? "hidden" : "flex"}`}>
         <Button 
+          onClick={() => setShowFullWidthSearch(true)}
           size="icon" 
           variant="ghost"
           className="md:hidden"
